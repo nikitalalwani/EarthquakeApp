@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19G2021" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Feature" representedClassName="Feature" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <relationship name="geometry" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Geometry"/>
+        <relationship name="properties" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Properties"/>
+    </entity>
+    <entity name="FeatureCollection" representedClassName="FeatureCollection" syncable="YES">
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <relationship name="features" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Feature"/>
+        <relationship name="metadata" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MetaData"/>
+    </entity>
+    <entity name="Geometry" representedClassName="Geometry" syncable="YES">
+        <attribute name="coordinates" optional="YES" attributeType="Transformable" customClassName="[Float64]"/>
+        <attribute name="type" optional="YES" attributeType="String" customClassName="[Float64]"/>
+    </entity>
+    <entity name="MetaData" representedClassName="MetaData" syncable="YES">
+        <attribute name="api" optional="YES" attributeType="String"/>
+        <attribute name="count" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="generated" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="status" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Properties" representedClassName="Properties" syncable="YES">
+        <attribute name="detail" optional="YES" attributeType="String"/>
+        <attribute name="mag" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="magType" optional="YES" attributeType="String"/>
+        <attribute name="place" optional="YES" attributeType="String"/>
+        <attribute name="status" optional="YES" attributeType="String"/>
+        <attribute name="time" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <attribute name="updates" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Geometry" positionX="-54" positionY="-9" width="128" height="73"/>
+        <element name="Properties" positionX="-36" positionY="27" width="128" height="193"/>
+        <element name="Feature" positionX="-18" positionY="108" width="128" height="103"/>
+        <element name="MetaData" positionX="0" positionY="117" width="128" height="133"/>
+        <element name="FeatureCollection" positionX="18" positionY="126" width="128" height="88"/>
+    </elements>
+</model>
