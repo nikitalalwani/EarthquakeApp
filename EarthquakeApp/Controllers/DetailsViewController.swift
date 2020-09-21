@@ -33,8 +33,8 @@ final class DetailsViewController: UIViewController, WKUIDelegate {
 
         override func viewDidLoad() {
             super.viewDidLoad()
-            self.navigationItem.title = "Details"
-            self.navigationItem.titleView?.accessibilityIdentifier = "Details"
+            self.navigationItem.title = Strings.detailTitle
+            self.navigationItem.titleView?.accessibilityIdentifier = Strings.detailTitle
             setupUI()
         }
         
@@ -62,7 +62,7 @@ extension DetailsViewController: DetailsViewControllerProtocol {
     //This method is used to open a url in a webView
     func refreshUI() {
         if let viewModel = viewModel, let feature = viewModel.feature {
-            let myURL = URL(string: feature.properties?.url ?? "")
+            let myURL = URL(string: feature.properties?.url ?? Strings.emptyStr)
             let myRequest = URLRequest(url: myURL!)
             webView.load(myRequest)
         }

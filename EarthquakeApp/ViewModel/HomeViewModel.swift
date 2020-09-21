@@ -21,14 +21,7 @@ class HomeViewModel: GenericViewModel {
              }
          }
     }
-    //Error in data fetching
-    var fetchError: NetworkError? {
-        didSet {
-                 DispatchQueue.main.async {
-                    self.homeViewController?.noData()
-                 }
-             }
-    }
+
     //initializing homeviewmodel with its delegate as homecontroller
     init(_ homeViewControllerProtocol:HomeViewControllerProtocol) {
         super.init()
@@ -45,7 +38,6 @@ class HomeViewModel: GenericViewModel {
                 self?.featureCollectionResultArray = model
             case .failure(let error):
                 print(error.localizedDescription)
-                self?.fetchError = error
             }
 
       }
@@ -61,7 +53,7 @@ class HomeViewModel: GenericViewModel {
     //get title of the feature
     func getFeatureTitle(at index:Int) -> String {
         guard let featureResults = featureCollectionResultArray else {
-            return ""
+            return Strings.emptyStr
         }
         //If index exists then append title string to Title
         if index < featureResults.features!.count && index >= 0 {
@@ -69,13 +61,13 @@ class HomeViewModel: GenericViewModel {
                 return "Title: " + str
             }
         }
-        return ""
+        return Strings.emptyStr
     }
     
     //get type of the feature
     func getFeatureType(at index:Int) -> String {
         guard let featureResults = featureCollectionResultArray else {
-            return ""
+            return Strings.emptyStr
         }
         if index < featureResults.features!.count && index >= 0 {
             if let str = featureResults.features?[index].properties?.type {
@@ -99,7 +91,7 @@ class HomeViewModel: GenericViewModel {
     //get magnitude at a specific index
     func getMag(at index: Int) -> String {
         guard let featureResults = featureCollectionResultArray else {
-            return ""
+            return Strings.emptyStr
         }
         if index < featureResults.features!.count && index >= 0 {
             if let str = featureResults.features![index].properties?.mag{
@@ -112,7 +104,7 @@ class HomeViewModel: GenericViewModel {
     //get type of magnitude
     func getMagType(at index: Int) -> String {
         guard let featureResults = featureCollectionResultArray else {
-            return ""
+            return Strings.emptyStr
         }
         if index < featureResults.features!.count && index >= 0 {
             if let str = featureResults.features![index].properties?.magType {
@@ -125,7 +117,7 @@ class HomeViewModel: GenericViewModel {
     //get location of the earthquake
     func getPlace(at index: Int) -> String {
         guard let featureResults = featureCollectionResultArray else {
-            return ""
+            return Strings.emptyStr
         }
         if index < featureResults.features!.count && index >= 0 {
             if let str = featureResults.features![index].properties?.place {
@@ -138,12 +130,12 @@ class HomeViewModel: GenericViewModel {
     //get date and time of the earthquake
     func getTime(at index: Int) -> String {
         guard let featureResults = featureCollectionResultArray else {
-            return ""
+            return Strings.emptyStr
         }
         //modifying time into a readable format
         if index < featureResults.features!.count && index >= 0 {
             guard let res = featureResults.features![index].properties?.time else {
-                return ""
+                return Strings.emptyStr
             }
             let localDate = Date().convertToLocalDate(res)
             return "Time: " + localDate
@@ -167,7 +159,7 @@ class HomeViewModel: GenericViewModel {
     func sortByDateAscending() {
         if var features =  featureCollectionResultArray?.features {
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd/MM/yyyy"
+            dateFormatter.dateFormat = Strings.dateFormat
             features.sort {
                 let first = Date().convertToLocalDate($0.properties?.time ?? 0)
                 let second = Date().convertToLocalDate($1.properties?.time ?? 0)
@@ -180,7 +172,7 @@ class HomeViewModel: GenericViewModel {
     func sortByDateDescending() {
         if var features =  featureCollectionResultArray?.features {
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd/MM/yyyy"
+            dateFormatter.dateFormat = Strings.dateFormat
             features.sort {
                 let first = Date().convertToLocalDate($0.properties?.time ?? 0)
                 let second = Date().convertToLocalDate($1.properties?.time ?? 0)

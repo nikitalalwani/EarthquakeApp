@@ -30,6 +30,10 @@ In addition to that, swift is high in performance compared to Objective-C
 - In addition to that, I have used webViews, extensions, enums, completion handlers etc.
 - I have also added few basic automation test cases.
 - I have added autolayout to make screen appear almost perfect in both the orientations
+<<<<<<< HEAD
+=======
+- A utility class that takes care of all miscellaneous tasks or methods, store strings, enums, extensions etc.
+>>>>>>> a561a19... Readme
 
 
 Why are you proud of this project? 

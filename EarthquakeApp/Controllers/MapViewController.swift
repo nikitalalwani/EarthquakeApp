@@ -8,37 +8,52 @@
 
 import UIKit
 import MapKit
+import ReachabilitySwift
 
 protocol MapViewControllerProtocol:class {
     func refreshMapUI()
-    func noData()
-
 }
-
 
 class MapViewController: UIViewController, MKMapViewDelegate, MapViewControllerProtocol {
 
     @IBOutlet weak var mapView: MKMapView!
     var mapViewModel: MapViewModel?
+    var noDataLbl: UILabel? = nil
 
+    //View Lifecycle methods
     override func  viewDidLoad() {
         
         super.viewDidLoad()
         //setting this class as mapView's delegate
         mapView.delegate = self
-        //initializing the view model
-        mapViewModel = MapViewModel(self)
+        
+        noDataLbl = UILabel.createNoDataLabel()
+        self.view.addSubview(noDataLbl ?? UILabel())
+        noDataLbl?.isHidden = true
+        noDataLbl?.centerXAnchor.constraint(equalTo: self.view.centerXAnchor, constant:2.0).isActive = true
+        noDataLbl?.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant:2.0).isActive = true
 
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //initializing the view model
+        mapViewModel = MapViewModel(self)
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         refreshMapUI()
+        ReachabilityManager.shared.addListener(listener: self)
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        ReachabilityManager.shared.removeListener(listener: self)
+    }
+    
+    
     
     func refreshMapUI() {
         var annotations = [MKPointAnnotation]()
-        if let result = mapViewModel?.getFeatures() {
+        if let result = mapViewModel?.getAllFeatures() {
                 DispatchQueue.main.async {
                     for location in result.features ?? []{
                         //Here we are getting the latitude and longitude from our model and setting it to map annotation 
@@ -66,7 +81,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, MapViewControllerP
     // method in TableViewDataSource.
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
-        let reuseId = "pin"
+        let reuseId = Strings.pinReuseId
         
         var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
         
@@ -89,17 +104,23 @@ class MapViewController: UIViewController, MKMapViewDelegate, MapViewControllerP
         self.navigationController?.pushViewController(detailsViewCtrl, animated: true)
         detailsViewCtrl.viewModel = DetailViewModel(feature:mapViewModel?.getFeatureWithId((view.annotation?.subtitle ?? "")!), detailViewCtrl: detailsViewCtrl)
     }
-    
-    func noData() {
-        mapView.removeFromSuperview()
-        let label = UILabel(frame: CGRect(x:0, y:0, width:200, height:21))
-         label.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(label)
-        label.centerXAnchor.constraint(equalTo: self.view.centerXAnchor, constant:2.0).isActive = true
-        label.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant:2.0).isActive = true
-         label.textAlignment = .center
-        label.textColor = .gray
-         label.text = "Unable to load data from the server"
-        
+}
+
+//handling the internet connection
+extension MapViewController: NetworkStatusListener {
+    func networkStatusDidChange(status: Reachability.NetworkStatus) {
+       switch status {
+        case .notReachable:
+            mapView.isHidden = true
+            noDataLbl?.isHidden = false
+        case .reachableViaWiFi:
+            mapView.isHidden = false
+            noDataLbl?.isHidden = true
+            mapViewModel?.getFeatures()
+        case .reachableViaWWAN:
+            mapView.isHidden = false
+            noDataLbl?.isHidden = true
+            mapViewModel?.getFeatures()
+        }
     }
 }

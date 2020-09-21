@@ -8,11 +8,6 @@
 
 import UIKit
 
-enum Coordinates: String {
-    case latitude = "latitude"
-    case longitude = "longitude"
-}
-
 class MapViewModel: GenericViewModel {
     
     weak var mapViewController:MapViewControllerProtocol?
@@ -24,23 +19,16 @@ class MapViewModel: GenericViewModel {
              }
          }
     }
-    var fetchError: Bool? {
-        didSet {
-                 DispatchQueue.main.async {
-                    self.mapViewController?.noData()
-                 }
-             }
-    }
-    
+
     init(_ mapViewControllerProtocol:MapViewControllerProtocol) {
         super.init()
         self.mapViewController = mapViewControllerProtocol
         
         //Getting data from network using completion handler
-        self.getFeaturesData()
+        self.getFeatures()
     }
     
-    func getFeaturesData() {
+    func getFeatures() {
            self.getFeatureResults { [weak self] (result)  in
                
                switch result {
@@ -48,14 +36,13 @@ class MapViewModel: GenericViewModel {
                    self?.featureCollectionResultArray = model
                case .failure(let error):
                    print(error.localizedDescription)
-                   self?.fetchError = ((error as? NetworkError) != nil)
                }
 
          }
        }
    
     //Get all earthquake features array from the response
-    func getFeatures() -> FeatureCollection? {
+    func getAllFeatures() -> FeatureCollection? {
         guard let featureResults = featureCollectionResultArray else {
             return nil
         }

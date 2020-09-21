@@ -37,8 +37,8 @@ class SortController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func setCheckmark() {
-        if UserDefaults.standard.value(forKey: "sortTypeSelected") != nil {
-            if let check = UserDefaults.standard.object (forKey: "sortTypeSelected") {
+        if UserDefaults.standard.value(forKey: Strings.userdefaultSortKey) != nil {
+            if let check = UserDefaults.standard.object (forKey: Strings.userdefaultSortKey) {
                 selectedIndex = check as! Int
             }
         }
@@ -55,7 +55,7 @@ class SortController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "sortCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Strings.sortCell, for: indexPath)
         cell.textLabel?.text = values[indexPath.row]
         
         if selectedIndex == indexPath.row {
@@ -71,7 +71,7 @@ class SortController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         sortType = SortType.init(rawValue: indexPath.row) ?? SortType.None
         selectedIndex = indexPath.row
-        UserDefaults.standard.set(selectedIndex, forKey: "sortTypeSelected")
+        UserDefaults.standard.set(selectedIndex, forKey: Strings.userdefaultSortKey)
         UserDefaults.standard.synchronize()
         DispatchQueue.main.async {
                   self.tableView.reloadData()

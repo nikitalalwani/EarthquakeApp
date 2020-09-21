@@ -1,0 +1,972 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0723DDB36BBFACF1F1B4523F269581D1 /* Pods-EarthquakeApp-EarthquakeAppUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ED3979CFE7AAEA466A9ABAC64B85842B /* Pods-EarthquakeApp-EarthquakeAppUITests-dummy.m */; };
+		12C917F99E8334B6817CFDB423E451E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE354DA182454A49972F1EA0BAB0B3E /* Foundation.framework */; };
+		181F48978150356520067A4598BB18FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE354DA182454A49972F1EA0BAB0B3E /* Foundation.framework */; };
+		1FE0E7C6139F643C1FAFF738319014A8 /* ReachabilitySwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B385D0833BEA72DDB408BF0877D2E857 /* ReachabilitySwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		39AF2E061EEDEEB165C1EAA4FD904E97 /* Pods-EarthquakeAppTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C154F39145A578012DCC737C47495955 /* Pods-EarthquakeAppTests-dummy.m */; };
+		43E1B376731340066E097F19D2DB0899 /* Pods-EarthquakeApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 36EAE4B131C25E2FF996284514A14B35 /* Pods-EarthquakeApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		55E5114E1A9849F1E382D6AAABFB3BAC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4F7799189C352E1D9346617C1FCFED /* SystemConfiguration.framework */; };
+		656C8564A2B3294BE4EE8A59775FFCDC /* Pods-EarthquakeApp-EarthquakeAppUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E636A45D399463656C3079314720685B /* Pods-EarthquakeApp-EarthquakeAppUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6B70F096A7DD22F839C709543B79C0E0 /* Pods-EarthquakeApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E77A6E024509413122DEA57383EDEDBC /* Pods-EarthquakeApp-dummy.m */; };
+		6B888BC35A8009AE87F17B03DA43EF56 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CD1643E87BBD7BBEAC34076E519013 /* Reachability.swift */; };
+		70B3D70EBA4737DB5CCAAC7A5064E2DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE354DA182454A49972F1EA0BAB0B3E /* Foundation.framework */; };
+		B3A247D4528FFB10C0C23C6CEE05D441 /* ReachabilitySwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B3366E47B8E0D1F1E79681A01041833F /* ReachabilitySwift-dummy.m */; };
+		BC3B7B75E82F16B1AE892BC1FD6C8A7E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE354DA182454A49972F1EA0BAB0B3E /* Foundation.framework */; };
+		F532B5607E0B12EE6717F5B9B8101CD4 /* Pods-EarthquakeAppTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 47AE84131B3E6546631AF54CB5735927 /* Pods-EarthquakeAppTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		22A2FE7C2AE29D1B4AF66239B270D267 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0B00B2C167CD783351BD1D00BD5AD1F8;
+			remoteInfo = ReachabilitySwift;
+		};
+		5757EA229CFC2C075FDDACAB63246B79 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C01E278EA0F75B00BC154D444ED300D2;
+			remoteInfo = "Pods-EarthquakeApp";
+		};
+		D6A47AF10C1C1F131E6F83C85A083A30 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0B00B2C167CD783351BD1D00BD5AD1F8;
+			remoteInfo = ReachabilitySwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		03D7346B688CBB4888A2A25306FAF609 /* Pods-EarthquakeApp-EarthquakeAppUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EarthquakeApp-EarthquakeAppUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		15E544D072AE0689AF42E52EA73F8C71 /* Pods-EarthquakeApp-EarthquakeAppUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EarthquakeApp-EarthquakeAppUITests-Info.plist"; sourceTree = "<group>"; };
+		1AB58D85C3D221367C69E24BA7F80E8C /* Pods_EarthquakeApp_EarthquakeAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_EarthquakeApp_EarthquakeAppUITests.framework; path = "Pods-EarthquakeApp-EarthquakeAppUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DE354DA182454A49972F1EA0BAB0B3E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		21B03CA622E690725A6626C088E1D09F /* ReachabilitySwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ReachabilitySwift.framework; path = ReachabilitySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2374B432E6062212564A6D5018D3486A /* ReachabilitySwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ReachabilitySwift-Info.plist"; sourceTree = "<group>"; };
+		294A2F14237E6D29E14CE795FF55469B /* Pods-EarthquakeAppTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-EarthquakeAppTests.modulemap"; sourceTree = "<group>"; };
+		29CD1643E87BBD7BBEAC34076E519013 /* Reachability.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Reachability/Reachability.swift; sourceTree = "<group>"; };
+		36EAE4B131C25E2FF996284514A14B35 /* Pods-EarthquakeApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EarthquakeApp-umbrella.h"; sourceTree = "<group>"; };
+		40C020E6C3C4E136AB67BCACEE22B388 /* ReachabilitySwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReachabilitySwift-prefix.pch"; sourceTree = "<group>"; };
+		47AE84131B3E6546631AF54CB5735927 /* Pods-EarthquakeAppTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EarthquakeAppTests-umbrella.h"; sourceTree = "<group>"; };
+		566B7D70A268B3471ABB5B48CAAC6451 /* Pods-EarthquakeApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EarthquakeApp-acknowledgements.markdown"; sourceTree = "<group>"; };
+		5EB141894D761930C421772E4EAEE236 /* Pods-EarthquakeAppTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EarthquakeAppTests-Info.plist"; sourceTree = "<group>"; };
+		60B75C46218C846B855006EFCF7C2067 /* Pods-EarthquakeApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EarthquakeApp-frameworks.sh"; sourceTree = "<group>"; };
+		63E2B0E2771B376F3729ECAABBE3ED7D /* Pods-EarthquakeAppTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EarthquakeAppTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		652D6BFC6A86F2E3A283855596A7B718 /* Pods-EarthquakeApp-EarthquakeAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EarthquakeApp-EarthquakeAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		675A6B35FED8CEC696613DDC87875187 /* ReachabilitySwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ReachabilitySwift.modulemap; sourceTree = "<group>"; };
+		72C0A998EF242F4DF4295686B5A14154 /* Pods_EarthquakeAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_EarthquakeAppTests.framework; path = "Pods-EarthquakeAppTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		73F2B9633745CCC4137CA303568479D0 /* Pods-EarthquakeApp-EarthquakeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EarthquakeApp-EarthquakeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7F0AE0FFD43CBD34020D30419B7F29D9 /* Pods-EarthquakeApp-EarthquakeAppUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-EarthquakeApp-EarthquakeAppUITests.modulemap"; sourceTree = "<group>"; };
+		98D9D316162E17FF26DB95088EDF1DAC /* Pods-EarthquakeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EarthquakeApp.debug.xcconfig"; sourceTree = "<group>"; };
+		9AC7E26722FED0CD1E6DC131B2427D95 /* ReachabilitySwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReachabilitySwift.release.xcconfig; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A3838C30D412E4C801271584A88CF403 /* Pods-EarthquakeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EarthquakeApp.release.xcconfig"; sourceTree = "<group>"; };
+		B3366E47B8E0D1F1E79681A01041833F /* ReachabilitySwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ReachabilitySwift-dummy.m"; sourceTree = "<group>"; };
+		B385D0833BEA72DDB408BF0877D2E857 /* ReachabilitySwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReachabilitySwift-umbrella.h"; sourceTree = "<group>"; };
+		B7A718A99D43DE6C518096910CC34E4E /* Pods-EarthquakeApp-EarthquakeAppUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EarthquakeApp-EarthquakeAppUITests-frameworks.sh"; sourceTree = "<group>"; };
+		B890FF9847218D73A60F4520CE8A2A28 /* Pods-EarthquakeAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EarthquakeAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BD150AA6729C88E22E2FD31FF333EB31 /* Pods-EarthquakeApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-EarthquakeApp.modulemap"; sourceTree = "<group>"; };
+		BFA40A4EC74AA6E6853D165325F9BA6F /* Pods_EarthquakeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_EarthquakeApp.framework; path = "Pods-EarthquakeApp.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C154F39145A578012DCC737C47495955 /* Pods-EarthquakeAppTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EarthquakeAppTests-dummy.m"; sourceTree = "<group>"; };
+		C9C1D47C8E4A6C30F030CBD528B912A5 /* Pods-EarthquakeApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EarthquakeApp-acknowledgements.plist"; sourceTree = "<group>"; };
+		CB5AFF6129CA1F06FDEB082F3DF9E0B2 /* ReachabilitySwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReachabilitySwift.debug.xcconfig; sourceTree = "<group>"; };
+		CE4F7799189C352E1D9346617C1FCFED /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		D730A0B6CC38F2F4D912882163C94154 /* Pods-EarthquakeApp-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EarthquakeApp-Info.plist"; sourceTree = "<group>"; };
+		E60E675128EB3DFE9E762E1D268A1FC9 /* Pods-EarthquakeApp-EarthquakeAppUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EarthquakeApp-EarthquakeAppUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E636A45D399463656C3079314720685B /* Pods-EarthquakeApp-EarthquakeAppUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EarthquakeApp-EarthquakeAppUITests-umbrella.h"; sourceTree = "<group>"; };
+		E77A6E024509413122DEA57383EDEDBC /* Pods-EarthquakeApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EarthquakeApp-dummy.m"; sourceTree = "<group>"; };
+		ED3979CFE7AAEA466A9ABAC64B85842B /* Pods-EarthquakeApp-EarthquakeAppUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EarthquakeApp-EarthquakeAppUITests-dummy.m"; sourceTree = "<group>"; };
+		F8C19773CA9545212191F6735E9A2D33 /* Pods-EarthquakeAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EarthquakeAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		FD9D53C40CD4EFFADF744BEED8B65769 /* Pods-EarthquakeAppTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EarthquakeAppTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		15AB9598EDCBAE85CD4FFB6C3A9065D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70B3D70EBA4737DB5CCAAC7A5064E2DA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D5B39498D08C41C5011A5AB3EC79D7A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12C917F99E8334B6817CFDB423E451E2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EEB9A2D8E791B6045E4036E4C77585A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC3B7B75E82F16B1AE892BC1FD6C8A7E /* Foundation.framework in Frameworks */,
+				55E5114E1A9849F1E382D6AAABFB3BAC /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E42305F1F72D62CA16F20A8C91014AD4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				181F48978150356520067A4598BB18FD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DB7EBF6CCCA535BA4F447E10039CEA16 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1E3DF2DB2A2A7B149C5DBF6E81AE0C4E /* Pods-EarthquakeApp-EarthquakeAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7F0AE0FFD43CBD34020D30419B7F29D9 /* Pods-EarthquakeApp-EarthquakeAppUITests.modulemap */,
+				E60E675128EB3DFE9E762E1D268A1FC9 /* Pods-EarthquakeApp-EarthquakeAppUITests-acknowledgements.markdown */,
+				03D7346B688CBB4888A2A25306FAF609 /* Pods-EarthquakeApp-EarthquakeAppUITests-acknowledgements.plist */,
+				ED3979CFE7AAEA466A9ABAC64B85842B /* Pods-EarthquakeApp-EarthquakeAppUITests-dummy.m */,
+				B7A718A99D43DE6C518096910CC34E4E /* Pods-EarthquakeApp-EarthquakeAppUITests-frameworks.sh */,
+				15E544D072AE0689AF42E52EA73F8C71 /* Pods-EarthquakeApp-EarthquakeAppUITests-Info.plist */,
+				E636A45D399463656C3079314720685B /* Pods-EarthquakeApp-EarthquakeAppUITests-umbrella.h */,
+				652D6BFC6A86F2E3A283855596A7B718 /* Pods-EarthquakeApp-EarthquakeAppUITests.debug.xcconfig */,
+				73F2B9633745CCC4137CA303568479D0 /* Pods-EarthquakeApp-EarthquakeAppUITests.release.xcconfig */,
+			);
+			name = "Pods-EarthquakeApp-EarthquakeAppUITests";
+			path = "Target Support Files/Pods-EarthquakeApp-EarthquakeAppUITests";
+			sourceTree = "<group>";
+		};
+		2CF060EF7F292CB974C3601CF946BCEC /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				675A6B35FED8CEC696613DDC87875187 /* ReachabilitySwift.modulemap */,
+				B3366E47B8E0D1F1E79681A01041833F /* ReachabilitySwift-dummy.m */,
+				2374B432E6062212564A6D5018D3486A /* ReachabilitySwift-Info.plist */,
+				40C020E6C3C4E136AB67BCACEE22B388 /* ReachabilitySwift-prefix.pch */,
+				B385D0833BEA72DDB408BF0877D2E857 /* ReachabilitySwift-umbrella.h */,
+				CB5AFF6129CA1F06FDEB082F3DF9E0B2 /* ReachabilitySwift.debug.xcconfig */,
+				9AC7E26722FED0CD1E6DC131B2427D95 /* ReachabilitySwift.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ReachabilitySwift";
+			sourceTree = "<group>";
+		};
+		543D6FB44928EE351419C60814B11DD9 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C84FEFB17C6AB50ED49E7175F99605DB /* Pods-EarthquakeApp */,
+				1E3DF2DB2A2A7B149C5DBF6E81AE0C4E /* Pods-EarthquakeApp-EarthquakeAppUITests */,
+				A34266C08337B2D399B009E51B64F2DB /* Pods-EarthquakeAppTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		5D0AA215FB49F5F6E11902E9E88FDB66 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9FC682CD040BA03E654F3D8F00C75058 /* ReachabilitySwift */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5D113FE39D3A48A315432F84653DAEEF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BFA40A4EC74AA6E6853D165325F9BA6F /* Pods_EarthquakeApp.framework */,
+				1AB58D85C3D221367C69E24BA7F80E8C /* Pods_EarthquakeApp_EarthquakeAppUITests.framework */,
+				72C0A998EF242F4DF4295686B5A14154 /* Pods_EarthquakeAppTests.framework */,
+				21B03CA622E690725A6626C088E1D09F /* ReachabilitySwift.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9FC682CD040BA03E654F3D8F00C75058 /* ReachabilitySwift */ = {
+			isa = PBXGroup;
+			children = (
+				29CD1643E87BBD7BBEAC34076E519013 /* Reachability.swift */,
+				2CF060EF7F292CB974C3601CF946BCEC /* Support Files */,
+			);
+			name = ReachabilitySwift;
+			path = ReachabilitySwift;
+			sourceTree = "<group>";
+		};
+		A34266C08337B2D399B009E51B64F2DB /* Pods-EarthquakeAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				294A2F14237E6D29E14CE795FF55469B /* Pods-EarthquakeAppTests.modulemap */,
+				FD9D53C40CD4EFFADF744BEED8B65769 /* Pods-EarthquakeAppTests-acknowledgements.markdown */,
+				63E2B0E2771B376F3729ECAABBE3ED7D /* Pods-EarthquakeAppTests-acknowledgements.plist */,
+				C154F39145A578012DCC737C47495955 /* Pods-EarthquakeAppTests-dummy.m */,
+				5EB141894D761930C421772E4EAEE236 /* Pods-EarthquakeAppTests-Info.plist */,
+				47AE84131B3E6546631AF54CB5735927 /* Pods-EarthquakeAppTests-umbrella.h */,
+				B890FF9847218D73A60F4520CE8A2A28 /* Pods-EarthquakeAppTests.debug.xcconfig */,
+				F8C19773CA9545212191F6735E9A2D33 /* Pods-EarthquakeAppTests.release.xcconfig */,
+			);
+			name = "Pods-EarthquakeAppTests";
+			path = "Target Support Files/Pods-EarthquakeAppTests";
+			sourceTree = "<group>";
+		};
+		C84FEFB17C6AB50ED49E7175F99605DB /* Pods-EarthquakeApp */ = {
+			isa = PBXGroup;
+			children = (
+				BD150AA6729C88E22E2FD31FF333EB31 /* Pods-EarthquakeApp.modulemap */,
+				566B7D70A268B3471ABB5B48CAAC6451 /* Pods-EarthquakeApp-acknowledgements.markdown */,
+				C9C1D47C8E4A6C30F030CBD528B912A5 /* Pods-EarthquakeApp-acknowledgements.plist */,
+				E77A6E024509413122DEA57383EDEDBC /* Pods-EarthquakeApp-dummy.m */,
+				60B75C46218C846B855006EFCF7C2067 /* Pods-EarthquakeApp-frameworks.sh */,
+				D730A0B6CC38F2F4D912882163C94154 /* Pods-EarthquakeApp-Info.plist */,
+				36EAE4B131C25E2FF996284514A14B35 /* Pods-EarthquakeApp-umbrella.h */,
+				98D9D316162E17FF26DB95088EDF1DAC /* Pods-EarthquakeApp.debug.xcconfig */,
+				A3838C30D412E4C801271584A88CF403 /* Pods-EarthquakeApp.release.xcconfig */,
+			);
+			name = "Pods-EarthquakeApp";
+			path = "Target Support Files/Pods-EarthquakeApp";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
+				5D0AA215FB49F5F6E11902E9E88FDB66 /* Pods */,
+				5D113FE39D3A48A315432F84653DAEEF /* Products */,
+				543D6FB44928EE351419C60814B11DD9 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		DB7EBF6CCCA535BA4F447E10039CEA16 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				1DE354DA182454A49972F1EA0BAB0B3E /* Foundation.framework */,
+				CE4F7799189C352E1D9346617C1FCFED /* SystemConfiguration.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		16C7A930484C1BA054A9BDAA1297055A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				656C8564A2B3294BE4EE8A59775FFCDC /* Pods-EarthquakeApp-EarthquakeAppUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B057185B7A201B16AB1B40D8711873E5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F532B5607E0B12EE6717F5B9B8101CD4 /* Pods-EarthquakeAppTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCC6D3BCF0AFD4AD6EE020DBDD80F8CA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FE0E7C6139F643C1FAFF738319014A8 /* ReachabilitySwift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE11145EC1331E72E021E178C704A0F6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43E1B376731340066E097F19D2DB0899 /* Pods-EarthquakeApp-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0B00B2C167CD783351BD1D00BD5AD1F8 /* ReachabilitySwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D06DF20230A8840C55A8926F0603550 /* Build configuration list for PBXNativeTarget "ReachabilitySwift" */;
+			buildPhases = (
+				BCC6D3BCF0AFD4AD6EE020DBDD80F8CA /* Headers */,
+				F23B52086CE937B2563B150DAD911AAC /* Sources */,
+				8EEB9A2D8E791B6045E4036E4C77585A /* Frameworks */,
+				B6C3751F128461DD8B38ED811EF1285A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ReachabilitySwift;
+			productName = ReachabilitySwift;
+			productReference = 21B03CA622E690725A6626C088E1D09F /* ReachabilitySwift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		945719E04C01EA71A48064EC33FC7802 /* Pods-EarthquakeApp-EarthquakeAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 61BFBE26FD5179BC11CF77CB6E796F9C /* Build configuration list for PBXNativeTarget "Pods-EarthquakeApp-EarthquakeAppUITests" */;
+			buildPhases = (
+				16C7A930484C1BA054A9BDAA1297055A /* Headers */,
+				D3FBD3C783D739629A57D7743A7AEF9B /* Sources */,
+				15AB9598EDCBAE85CD4FFB6C3A9065D7 /* Frameworks */,
+				0ACB63571328F26234C5BD6E971675A0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				69663FBF9EBE15163FF1AA8AEF34DEF7 /* PBXTargetDependency */,
+			);
+			name = "Pods-EarthquakeApp-EarthquakeAppUITests";
+			productName = "Pods-EarthquakeApp-EarthquakeAppUITests";
+			productReference = 1AB58D85C3D221367C69E24BA7F80E8C /* Pods_EarthquakeApp_EarthquakeAppUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A012177067343C529F0E00482CC83127 /* Pods-EarthquakeAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D1C96079086A4FDEA16A9AABDDB4F28 /* Build configuration list for PBXNativeTarget "Pods-EarthquakeAppTests" */;
+			buildPhases = (
+				B057185B7A201B16AB1B40D8711873E5 /* Headers */,
+				644546CE8179DDD4593BFA97C91B6BAA /* Sources */,
+				8D5B39498D08C41C5011A5AB3EC79D7A /* Frameworks */,
+				56D725F0AFC163218058939677EC2618 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D53E593098D8D84F218B729EA4B6CB4B /* PBXTargetDependency */,
+			);
+			name = "Pods-EarthquakeAppTests";
+			productName = "Pods-EarthquakeAppTests";
+			productReference = 72C0A998EF242F4DF4295686B5A14154 /* Pods_EarthquakeAppTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C01E278EA0F75B00BC154D444ED300D2 /* Pods-EarthquakeApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB157F516417CBF2F51295F4470DCC2F /* Build configuration list for PBXNativeTarget "Pods-EarthquakeApp" */;
+			buildPhases = (
+				BE11145EC1331E72E021E178C704A0F6 /* Headers */,
+				486818BA3BE5DC4ADD6A92961B7C1BF4 /* Sources */,
+				E42305F1F72D62CA16F20A8C91014AD4 /* Frameworks */,
+				9A2BDFBFC841A6B4BED2491ED218ADF3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B48DDAAF3BF54BEBF1E40FB7EA816F58 /* PBXTargetDependency */,
+			);
+			name = "Pods-EarthquakeApp";
+			productName = "Pods-EarthquakeApp";
+			productReference = BFA40A4EC74AA6E6853D165325F9BA6F /* Pods_EarthquakeApp.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 5D113FE39D3A48A315432F84653DAEEF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C01E278EA0F75B00BC154D444ED300D2 /* Pods-EarthquakeApp */,
+				945719E04C01EA71A48064EC33FC7802 /* Pods-EarthquakeApp-EarthquakeAppUITests */,
+				A012177067343C529F0E00482CC83127 /* Pods-EarthquakeAppTests */,
+				0B00B2C167CD783351BD1D00BD5AD1F8 /* ReachabilitySwift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0ACB63571328F26234C5BD6E971675A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56D725F0AFC163218058939677EC2618 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A2BDFBFC841A6B4BED2491ED218ADF3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6C3751F128461DD8B38ED811EF1285A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		486818BA3BE5DC4ADD6A92961B7C1BF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B70F096A7DD22F839C709543B79C0E0 /* Pods-EarthquakeApp-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		644546CE8179DDD4593BFA97C91B6BAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39AF2E061EEDEEB165C1EAA4FD904E97 /* Pods-EarthquakeAppTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3FBD3C783D739629A57D7743A7AEF9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0723DDB36BBFACF1F1B4523F269581D1 /* Pods-EarthquakeApp-EarthquakeAppUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F23B52086CE937B2563B150DAD911AAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B888BC35A8009AE87F17B03DA43EF56 /* Reachability.swift in Sources */,
+				B3A247D4528FFB10C0C23C6CEE05D441 /* ReachabilitySwift-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		69663FBF9EBE15163FF1AA8AEF34DEF7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ReachabilitySwift;
+			target = 0B00B2C167CD783351BD1D00BD5AD1F8 /* ReachabilitySwift */;
+			targetProxy = D6A47AF10C1C1F131E6F83C85A083A30 /* PBXContainerItemProxy */;
+		};
+		B48DDAAF3BF54BEBF1E40FB7EA816F58 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ReachabilitySwift;
+			target = 0B00B2C167CD783351BD1D00BD5AD1F8 /* ReachabilitySwift */;
+			targetProxy = 22A2FE7C2AE29D1B4AF66239B270D267 /* PBXContainerItemProxy */;
+		};
+		D53E593098D8D84F218B729EA4B6CB4B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-EarthquakeApp";
+			target = C01E278EA0F75B00BC154D444ED300D2 /* Pods-EarthquakeApp */;
+			targetProxy = 5757EA229CFC2C075FDDACAB63246B79 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		5550BF2173282260AA6044E479E3B437 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB5AFF6129CA1F06FDEB082F3DF9E0B2 /* ReachabilitySwift.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ReachabilitySwift/ReachabilitySwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ReachabilitySwift/ReachabilitySwift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/ReachabilitySwift/ReachabilitySwift.modulemap";
+				PRODUCT_MODULE_NAME = ReachabilitySwift;
+				PRODUCT_NAME = ReachabilitySwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		58291A2DB68E9859755A304772680563 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3838C30D412E4C801271584A88CF403 /* Pods-EarthquakeApp.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-EarthquakeApp/Pods-EarthquakeApp-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-EarthquakeApp/Pods-EarthquakeApp.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		61FC5749665EDDB2D90E737333B3BA8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		837F9187935C3E33C4FDC540CDBAFDDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9AC7E26722FED0CD1E6DC131B2427D95 /* ReachabilitySwift.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ReachabilitySwift/ReachabilitySwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ReachabilitySwift/ReachabilitySwift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/ReachabilitySwift/ReachabilitySwift.modulemap";
+				PRODUCT_MODULE_NAME = ReachabilitySwift;
+				PRODUCT_NAME = ReachabilitySwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		93D9FD57271230475DEC7512BF451E58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8C19773CA9545212191F6735E9A2D33 /* Pods-EarthquakeAppTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-EarthquakeAppTests/Pods-EarthquakeAppTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-EarthquakeAppTests/Pods-EarthquakeAppTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CEA20E717FBA003671E9CB4D9C883F16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73F2B9633745CCC4137CA303568479D0 /* Pods-EarthquakeApp-EarthquakeAppUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-EarthquakeApp-EarthquakeAppUITests/Pods-EarthquakeApp-EarthquakeAppUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-EarthquakeApp-EarthquakeAppUITests/Pods-EarthquakeApp-EarthquakeAppUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D67E39207E667F6D983928AFFD1D3F80 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98D9D316162E17FF26DB95088EDF1DAC /* Pods-EarthquakeApp.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-EarthquakeApp/Pods-EarthquakeApp-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-EarthquakeApp/Pods-EarthquakeApp.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E50FAB86B10A0333F57A97619DC595F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 652D6BFC6A86F2E3A283855596A7B718 /* Pods-EarthquakeApp-EarthquakeAppUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-EarthquakeApp-EarthquakeAppUITests/Pods-EarthquakeApp-EarthquakeAppUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-EarthquakeApp-EarthquakeAppUITests/Pods-EarthquakeApp-EarthquakeAppUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F671B4D3AA8F2CA18D12CD74BD1CDEF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		FC7367E77232A492CD08782DC860F25E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B890FF9847218D73A60F4520CE8A2A28 /* Pods-EarthquakeAppTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-EarthquakeAppTests/Pods-EarthquakeAppTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-EarthquakeAppTests/Pods-EarthquakeAppTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0D06DF20230A8840C55A8926F0603550 /* Build configuration list for PBXNativeTarget "ReachabilitySwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5550BF2173282260AA6044E479E3B437 /* Debug */,
+				837F9187935C3E33C4FDC540CDBAFDDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				61FC5749665EDDB2D90E737333B3BA8D /* Debug */,
+				F671B4D3AA8F2CA18D12CD74BD1CDEF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		61BFBE26FD5179BC11CF77CB6E796F9C /* Build configuration list for PBXNativeTarget "Pods-EarthquakeApp-EarthquakeAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E50FAB86B10A0333F57A97619DC595F9 /* Debug */,
+				CEA20E717FBA003671E9CB4D9C883F16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9D1C96079086A4FDEA16A9AABDDB4F28 /* Build configuration list for PBXNativeTarget "Pods-EarthquakeAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC7367E77232A492CD08782DC860F25E /* Debug */,
+				93D9FD57271230475DEC7512BF451E58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB157F516417CBF2F51295F4470DCC2F /* Build configuration list for PBXNativeTarget "Pods-EarthquakeApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D67E39207E667F6D983928AFFD1D3F80 /* Debug */,
+				58291A2DB68E9859755A304772680563 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

@@ -32,12 +32,12 @@ class NetworkService {
         dataTask?.cancel()
           //creating the url with parameters
         guard var urlComponents = URLComponents(string:baseUrl + path) else {
-            completion(.failure(.malformedURL(message:"URL is not correct")))
+            completion(.failure(.malformedURL(message:Strings.urlNotCorrect)))
             return
         }
         urlComponents.query = "\(parameters)"
         guard let url = urlComponents.url else {
-            completion(.failure(.malformedURL(message:"URL is nil")))
+            completion(.failure(.malformedURL(message:Strings.urlEmpty)))
             return
         }
         dataTask =  urlSesson.dataTask(with:url) { (data, responce, error)  in

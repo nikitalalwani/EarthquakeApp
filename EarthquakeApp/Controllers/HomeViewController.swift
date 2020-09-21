@@ -7,37 +7,50 @@
 //
 
 import UIKit
+import ReachabilitySwift
 
 protocol HomeViewControllerProtocol:class {
-    func noData() 
     func refreshUI()
     func refreshTablView(for indexPath:IndexPath)
 }
 
 class HomeViewController: UIViewController {
+    
+    
+    @IBOutlet weak var tableView: UITableView!
 
     var homeViewModel: HomeViewModel?
+    var noDataLbl: UILabel? = nil
 
-    @IBOutlet weak var tableView: UITableView!
-    
+    //View Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        //Initializing the viewmodel with self as its delegate
-        homeViewModel = HomeViewModel(self)
         setupUI()
 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //Initializing the viewmodel with self as its delegate
+        homeViewModel = HomeViewModel(self)
+        ReachabilityManager.shared.addListener(listener: self)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        ReachabilityManager.shared.removeListener(listener: self)
+    }    
 
     //separate method for user interface setup
     func setupUI() {
-        navigationItem.title = "Earthquakes"
-        navigationItem.titleView?.accessibilityIdentifier = "Earthquakes"
+        navigationItem.title = Strings.homeTitle
+        navigationItem.titleView?.accessibilityIdentifier = Strings.homeTitle
         
         
         let button = UIButton.init(type: .custom)
-        let img = UIImage.init(named: "sort")
+        let img = UIImage.init(named: Strings.sortButton)
         button.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
         button.contentMode = .scaleAspectFit
         button.setBackgroundImage(img, for: .normal)
@@ -45,7 +58,14 @@ class HomeViewController: UIViewController {
         button.addTarget(self, action: #selector(self.sortArr(_:)), for: .touchUpInside)
 
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
+        
+        noDataLbl = UILabel.createNoDataLabel()
+        self.view.addSubview(noDataLbl ?? UILabel())
+        noDataLbl?.isHidden = true
+        noDataLbl?.centerXAnchor.constraint(equalTo: self.view.centerXAnchor, constant:2.0).isActive = true
+        noDataLbl?.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant:2.0).isActive = true
     }
+    
     //This method opens the sorting filter view
     @objc func sortArr(_ sender: UIBarButtonItem) {
         let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -53,7 +73,7 @@ class HomeViewController: UIViewController {
             return
         }
         vc.delegate = self
-        vc.modalPresentationStyle = .popover
+        vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true, completion:nil)
     }
 
@@ -66,7 +86,7 @@ class HomeViewController: UIViewController {
         }
     }
 
-
+    //Extension for table view data source
     extension HomeViewController:UITableViewDataSource {
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             guard let homeViewModel = homeViewModel else {
@@ -76,7 +96,7 @@ class HomeViewController: UIViewController {
         }
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier:"homeCell", for:indexPath) as! HomeCell
+            let cell = tableView.dequeueReusableCell(withIdentifier:Strings.homeCell, for:indexPath) as! HomeCell
             
             cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
 
@@ -88,9 +108,6 @@ class HomeViewController: UIViewController {
                 cell.placeLbl.text = homeViewModel.getPlace(at: indexPath.row)
                 cell.timeLbl.text = homeViewModel.getTime(at: indexPath.row)
                 cell.albumImgView.text = homeViewModel.getMag(at: indexPath.row)
-            }else {
-                cell.titleLbl.text = ""
-                cell.nameLbl.text = ""
             }
             return cell
         }
@@ -109,19 +126,6 @@ class HomeViewController: UIViewController {
     }
 
     extension HomeViewController:HomeViewControllerProtocol, SortControllerProtocol {
-        
-        func noData() {
-            tableView.removeFromSuperview()
-            let label = UILabel(frame: CGRect(x:0, y:0, width:200, height:21))
-             label.translatesAutoresizingMaskIntoConstraints = false
-            self.view.addSubview(label)
-            label.centerXAnchor.constraint(equalTo: self.view.centerXAnchor, constant:2.0).isActive = true
-            label.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant:2.0).isActive = true
-             label.textAlignment = .center
-            label.textColor = .gray
-             label.text = "Unable to load data from the server"
-            
-        }
         func refreshUI() {
             tableView?.reloadData()
         }
@@ -140,4 +144,24 @@ class HomeViewController: UIViewController {
                 homeViewModel?.defaultSort()
             }
         }
+}
+
+//handling the internet connection
+extension HomeViewController: NetworkStatusListener {
+    func networkStatusDidChange(status: Reachability.NetworkStatus) {
+
+        switch status {
+        case .notReachable:
+            tableView.isHidden = true
+            noDataLbl?.isHidden = false
+        case .reachableViaWiFi:
+            tableView.isHidden = false
+            noDataLbl?.isHidden = true
+            homeViewModel?.getFeatures()
+        case .reachableViaWWAN:
+            tableView.isHidden = false
+            noDataLbl?.isHidden = true
+            homeViewModel?.getFeatures()
+        }
+    }
 }
