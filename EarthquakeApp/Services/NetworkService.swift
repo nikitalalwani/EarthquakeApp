@@ -13,6 +13,7 @@ enum NetworkError:Error {
     case malformedURL(message:String)
     case errorWith(response:URLResponse?)
     case dataParsinFailed
+    case serverError
 }
 
 //completion handler to support network requests
@@ -40,39 +41,19 @@ class NetworkService {
             return
         }
         dataTask =  urlSesson.dataTask(with:url) { (data, responce, error)  in
-            guard let data = data , let _responce = responce as? HTTPURLResponse , _responce.statusCode == 200 else {
-                completion(.failure(.errorWith(response: responce)))
+            guard let data = data , let _response = responce as? HTTPURLResponse , (200...299).contains( _response.statusCode) else {
+                completion(.failure(.serverError))
                 return
             }
             do {
                 let features = try JSONDecoder().decode(FeatureCollection.self, from: data)
                 completion(.success(features))
             }catch {
+                print(error)
                 completion(.failure(.dataParsinFailed))
             }
         }
         dataTask?.resume()
     }
-    
-    func downloadImageFrom(url: String, completion: @escaping imageDownlaodCompletionHandler) {
-          let urlSesson = URLSession(configuration: .default)
-          guard let urlComponents = URLComponents(string:url) else {
-              completion(nil, .malformedURL(message:"URL is not correct"))
-              return
-          }
-          guard let url = urlComponents.url else {
-              completion(nil, .malformedURL(message:"URL is nil"))
-              return
-          }
-          dataTask =  urlSesson.dataTask(with:url) { (data, responce, error)  in
-              guard let data = data , let _responce = responce as? HTTPURLResponse , _responce.statusCode == 200 else {
-                  completion(nil, .errorWith(response:responce))
-                  return
-              }
-            completion(data, nil)
-
-          }
-          dataTask?.resume()
-      }
 }
 

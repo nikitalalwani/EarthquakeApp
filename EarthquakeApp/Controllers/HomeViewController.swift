@@ -7,28 +7,55 @@
 //
 
 import UIKit
+
 protocol HomeViewControllerProtocol:class {
+    func noData() 
     func refreshUI()
     func refreshTablView(for indexPath:IndexPath)
 }
 
 class HomeViewController: UIViewController {
 
-
     var homeViewModel: HomeViewModel?
-        
+
     @IBOutlet weak var tableView: UITableView!
     
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            
-            // Do any additional setup after loading the view.
-            
-            //Initializing the viewmodel with self as its delegate
-            homeViewModel = HomeViewModel(self)
-            navigationItem.title = "Earthquakes"
-            
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+        //Initializing the viewmodel with self as its delegate
+        homeViewModel = HomeViewModel(self)
+        setupUI()
+
+    }
+
+    //separate method for user interface setup
+    func setupUI() {
+        navigationItem.title = "Earthquakes"
+        navigationItem.titleView?.accessibilityIdentifier = "Earthquakes"
+        
+        
+        let button = UIButton.init(type: .custom)
+        let img = UIImage.init(named: "sort")
+        button.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+        button.contentMode = .scaleAspectFit
+        button.setBackgroundImage(img, for: .normal)
+        button.setTitleColor(.darkGray, for: .normal)
+        button.addTarget(self, action: #selector(self.sortArr(_:)), for: .touchUpInside)
+
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
+    }
+    //This method opens the sorting filter view
+    @objc func sortArr(_ sender: UIBarButtonItem) {
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "SortController") as? SortController else {
+            return
         }
+        vc.delegate = self
+        vc.modalPresentationStyle = .popover
+        present(vc, animated: true, completion:nil)
+    }
 
     //Moving to a view when tableview cell is tapped
          func moveToDetailVC(for indexPath:IndexPath) {
@@ -57,7 +84,6 @@ class HomeViewController: UIViewController {
             if let homeViewModel = homeViewModel {
                 cell.titleLbl.text = homeViewModel.getFeatureTitle(at: indexPath.row)
                 cell.nameLbl.text = homeViewModel.getFeatureType(at: indexPath.row)
-                cell.magLbl.text = homeViewModel.getMag(at: indexPath.row)
                 cell.magTypeLbl.text = homeViewModel.getMagType(at: indexPath.row)
                 cell.placeLbl.text = homeViewModel.getPlace(at: indexPath.row)
                 cell.timeLbl.text = homeViewModel.getTime(at: indexPath.row)
@@ -68,8 +94,9 @@ class HomeViewController: UIViewController {
             }
             return cell
         }
+        
+        
     }
-
 
     extension HomeViewController:UITableViewDelegate {
         func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -81,12 +108,36 @@ class HomeViewController: UIViewController {
         }
     }
 
-    extension HomeViewController:HomeViewControllerProtocol {
+    extension HomeViewController:HomeViewControllerProtocol, SortControllerProtocol {
+        
+        func noData() {
+            tableView.removeFromSuperview()
+            let label = UILabel(frame: CGRect(x:0, y:0, width:200, height:21))
+             label.translatesAutoresizingMaskIntoConstraints = false
+            self.view.addSubview(label)
+            label.centerXAnchor.constraint(equalTo: self.view.centerXAnchor, constant:2.0).isActive = true
+            label.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant:2.0).isActive = true
+             label.textAlignment = .center
+            label.textColor = .gray
+             label.text = "Unable to load data from the server"
+            
+        }
         func refreshUI() {
             tableView?.reloadData()
         }
         func refreshTablView(for indexPath:IndexPath) {
             tableView?.reloadRows(at:[indexPath], with: UITableView.RowAnimation.automatic)
         }
-
+        
+        func refreshUIWithCriteria(_ criteria: SortType) {
+            if criteria == .Magnitude {
+                homeViewModel?.sortByMag()
+            } else if criteria == .DateAsc {
+                homeViewModel?.sortByDateAscending()
+            } else if criteria == .DateDesc {
+                homeViewModel?.sortByDateDescending()
+            } else {
+                homeViewModel?.defaultSort()
+            }
+        }
 }

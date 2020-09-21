@@ -11,6 +11,8 @@ import MapKit
 
 protocol MapViewControllerProtocol:class {
     func refreshMapUI()
+    func noData()
+
 }
 
 
@@ -38,16 +40,16 @@ class MapViewController: UIViewController, MKMapViewDelegate, MapViewControllerP
         var annotations = [MKPointAnnotation]()
         if let result = mapViewModel?.getFeatures() {
                 DispatchQueue.main.async {
-                    for location in result.features {
+                    for location in result.features ?? []{
                         //Here we are getting the latitude and longitude from our model and setting it to map annotation 
-                        let long = CLLocationDegrees(location.geometry.coordinates[0])
-                        let lat = CLLocationDegrees(location.geometry.coordinates[1])
+                        let long = CLLocationDegrees((location.geometry?.coordinates?[0])!)
+                        let lat = CLLocationDegrees((location.geometry?.coordinates?[1])!)
                         let cords = CLLocationCoordinate2D(latitude: lat, longitude: long)
                         
 
                         let annotation = MKPointAnnotation()
                         annotation.coordinate = cords
-                        annotation.title = location.properties.title
+                        annotation.title = location.properties?.title
                         annotation.subtitle = location.id
                         annotations.append(annotation)
                     }
@@ -86,5 +88,18 @@ class MapViewController: UIViewController, MKMapViewDelegate, MapViewControllerP
         let detailsViewCtrl = DetailsViewController()
         self.navigationController?.pushViewController(detailsViewCtrl, animated: true)
         detailsViewCtrl.viewModel = DetailViewModel(feature:mapViewModel?.getFeatureWithId((view.annotation?.subtitle ?? "")!), detailViewCtrl: detailsViewCtrl)
+    }
+    
+    func noData() {
+        mapView.removeFromSuperview()
+        let label = UILabel(frame: CGRect(x:0, y:0, width:200, height:21))
+         label.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(label)
+        label.centerXAnchor.constraint(equalTo: self.view.centerXAnchor, constant:2.0).isActive = true
+        label.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant:2.0).isActive = true
+         label.textAlignment = .center
+        label.textColor = .gray
+         label.text = "Unable to load data from the server"
+        
     }
 }

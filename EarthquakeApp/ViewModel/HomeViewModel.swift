@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import CoreLocation
 
 class HomeViewModel: GenericViewModel {
    
     weak var homeViewController:HomeViewControllerProtocol?
+    
+    //our global array that is responsible for data render
     var featureCollectionResultArray: FeatureCollection? {
          didSet {
              DispatchQueue.main.async {
@@ -18,21 +21,39 @@ class HomeViewModel: GenericViewModel {
              }
          }
     }
+    //Error in data fetching
+    var fetchError: NetworkError? {
+        didSet {
+                 DispatchQueue.main.async {
+                    self.homeViewController?.noData()
+                 }
+             }
+    }
     //initializing homeviewmodel with its delegate as homecontroller
     init(_ homeViewControllerProtocol:HomeViewControllerProtocol) {
         super.init()
-        self.homeViewController = homeViewControllerProtocol
+        homeViewController = homeViewControllerProtocol
         //gettting data from network and story it in a local array
+        getFeatures()
+    }
+    //get All the features
+    func getFeatures() {
         self.getFeatureResults { [weak self] (result)  in
-            if let res = result {
-                self?.featureCollectionResultArray = res
+            
+            switch result {
+            case .success(let model):
+                self?.featureCollectionResultArray = model
+            case .failure(let error):
+                print(error.localizedDescription)
+                self?.fetchError = error
             }
-        }
+
+      }
     }
 
     func getNumberOfFeatures() -> Int {
         if let featureResults = featureCollectionResultArray {
-            return featureResults.features.count
+            return featureResults.features?.count ?? 0
         }
         return 0
     }
@@ -43,8 +64,10 @@ class HomeViewModel: GenericViewModel {
             return ""
         }
         //If index exists then append title string to Title
-        if index < featureResults.features.count && index >= 0 {
-            return "Title: " + featureResults.features[index].properties.title
+        if index < featureResults.features!.count && index >= 0 {
+            if let str = featureResults.features?[index].properties?.title {
+                return "Title: " + str
+            }
         }
         return ""
     }
@@ -54,10 +77,12 @@ class HomeViewModel: GenericViewModel {
         guard let featureResults = featureCollectionResultArray else {
             return ""
         }
-        if index < featureResults.features.count && index >= 0 {
-            return "Type: " + featureResults.features[index].properties.type
+        if index < featureResults.features!.count && index >= 0 {
+            if let str = featureResults.features?[index].properties?.type {
+                return "Type: " + str
+            }
         }
-        return ""
+        return "Type: - "
     }
     
     //get feature at a specific index
@@ -65,8 +90,8 @@ class HomeViewModel: GenericViewModel {
         guard let featureResults = featureCollectionResultArray else {
             return nil
         }
-        if index < featureResults.features.count && index >= 0 {
-            return featureResults.features[index]
+        if index < featureResults.features!.count && index >= 0 {
+            return featureResults.features![index]
         }
         return nil
     }
@@ -76,10 +101,12 @@ class HomeViewModel: GenericViewModel {
         guard let featureResults = featureCollectionResultArray else {
             return ""
         }
-        if index < featureResults.features.count && index >= 0 {
-            return "Magnitude: " + String(featureResults.features[index].properties.mag)
+        if index < featureResults.features!.count && index >= 0 {
+            if let str = featureResults.features![index].properties?.mag{
+                return "Magnitude: " + String(str)
+            }
         }
-        return ""
+        return "Magnitude: - "
     }
     
     //get type of magnitude
@@ -87,10 +114,12 @@ class HomeViewModel: GenericViewModel {
         guard let featureResults = featureCollectionResultArray else {
             return ""
         }
-        if index < featureResults.features.count && index >= 0 {
-            return "MagnitudeType: " + featureResults.features[index].properties.magType
+        if index < featureResults.features!.count && index >= 0 {
+            if let str = featureResults.features![index].properties?.magType {
+                 return "MagnitudeType: " + str
+            }
         }
-        return ""
+        return "MagnitudeType: - "
     }
     
     //get location of the earthquake
@@ -98,10 +127,12 @@ class HomeViewModel: GenericViewModel {
         guard let featureResults = featureCollectionResultArray else {
             return ""
         }
-        if index < featureResults.features.count && index >= 0 {
-            return "Place: " + featureResults.features[index].properties.place
+        if index < featureResults.features!.count && index >= 0 {
+            if let str = featureResults.features![index].properties?.place {
+                 return "Place: " + str
+           }
         }
-        return ""
+        return "Place: - "
     }
     
     //get date and time of the earthquake
@@ -110,16 +141,64 @@ class HomeViewModel: GenericViewModel {
             return ""
         }
         //modifying time into a readable format
-        if index < featureResults.features.count && index >= 0 {
-            let timeResult = Double(featureResults.features[index].properties.time)
-            let date = Date(timeIntervalSince1970: timeResult)
-            let dateFormatter = DateFormatter()
-            dateFormatter.timeStyle = DateFormatter.Style.medium //Set time style
-            dateFormatter.dateStyle = DateFormatter.Style.medium //Set date style
-            dateFormatter.timeZone = .current
-            let localDate = dateFormatter.string(from: date)
+        if index < featureResults.features!.count && index >= 0 {
+            guard let res = featureResults.features![index].properties?.time else {
+                return ""
+            }
+            let localDate = Date().convertToLocalDate(res)
             return "Time: " + localDate
         }
-        return ""
+        return "Time: - "
+    }
+
+    func sortByMag() {
+        if var features =  featureCollectionResultArray?.features {
+            
+         features.sort{
+            guard let first = $0.properties?.mag, let second = $1.properties?.mag else {
+                    return false
+            }
+            return first < second
+        }
+            self.featureCollectionResultArray?.features = features
+        }
+    }
+    
+    func sortByDateAscending() {
+        if var features =  featureCollectionResultArray?.features {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd/MM/yyyy"
+            features.sort {
+                let first = Date().convertToLocalDate($0.properties?.time ?? 0)
+                let second = Date().convertToLocalDate($1.properties?.time ?? 0)
+                return first < second
+            }
+                self.featureCollectionResultArray?.features = features
+         }
+      }
+    
+    func sortByDateDescending() {
+        if var features =  featureCollectionResultArray?.features {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd/MM/yyyy"
+            features.sort {
+                let first = Date().convertToLocalDate($0.properties?.time ?? 0)
+                let second = Date().convertToLocalDate($1.properties?.time ?? 0)
+                return first > second
+            }
+                self.featureCollectionResultArray?.features = features
+         }
+      }
+    //sorting the array based on ids
+    func defaultSort() {
+        if var features =  featureCollectionResultArray?.features {
+         features.sort{
+            guard let first = $0.id, let second = $1.id else {
+                    return false
+            }
+            return first < second
+        }
+            self.featureCollectionResultArray?.features = features
+        }
     }
 }

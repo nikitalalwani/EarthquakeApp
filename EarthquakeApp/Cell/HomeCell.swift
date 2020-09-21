@@ -13,9 +13,7 @@ class HomeCell: UITableViewCell {
     @IBOutlet weak var titleLbl: UILabel!
     
     @IBOutlet weak var nameLbl: UILabel!
-    
-    @IBOutlet weak var magLbl: UILabel!
-    
+        
     @IBOutlet weak var magTypeLbl: UILabel!
     
     @IBOutlet weak var placeLbl: UILabel!

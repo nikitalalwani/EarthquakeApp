@@ -24,18 +24,35 @@ class MapViewModel: GenericViewModel {
              }
          }
     }
+    var fetchError: Bool? {
+        didSet {
+                 DispatchQueue.main.async {
+                    self.mapViewController?.noData()
+                 }
+             }
+    }
     
     init(_ mapViewControllerProtocol:MapViewControllerProtocol) {
         super.init()
         self.mapViewController = mapViewControllerProtocol
         
         //Getting data from network using completion handler
-        self.getFeatureResults { [weak self] (result)  in
-            if let res = result {
-                self?.featureCollectionResultArray = res
-            }
-        }
+        self.getFeaturesData()
     }
+    
+    func getFeaturesData() {
+           self.getFeatureResults { [weak self] (result)  in
+               
+               switch result {
+               case .success(let model):
+                   self?.featureCollectionResultArray = model
+               case .failure(let error):
+                   print(error.localizedDescription)
+                   self?.fetchError = ((error as? NetworkError) != nil)
+               }
+
+         }
+       }
    
     //Get all earthquake features array from the response
     func getFeatures() -> FeatureCollection? {
@@ -52,7 +69,7 @@ class MapViewModel: GenericViewModel {
                     return nil
     }
         
-        for feature in featureResults.features {
+        for feature in featureResults.features ?? [] {
             if feature.id == id {
                 return feature
             }
