@@ -40,4 +40,24 @@ class EarthquakeAppUITests: XCTestCase {
             }
         }
     }
+    
+      func testNavigationBarButton() throws {
+          // UI tests must launch the application that they test.
+        let app = XCUIApplication()
+        app.launch()
+        XCTAssertTrue(app.navigationBars["Earthquakes"].exists)
+
+      }
+      
+      func testDetailsNavigationBar() throws {
+          let app = XCUIApplication()
+          app.launch()
+          let tableViewQuery = app.tables.cells.element(boundBy: 0)
+                 if tableViewQuery.exists {
+                     tableViewQuery.tap()
+          }
+        let navBar = app.navigationBars["Details"]
+
+          XCTAssert(navBar.exists)
+      }
 }
